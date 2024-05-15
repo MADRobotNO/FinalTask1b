@@ -78,7 +78,7 @@ def update_graph(selected_shape):
             height=height,
             hover_data=['shape'],
             color='shape',
-            text='count'
+            text='count',
         )
 
         hover_template = '<b>Shape:</b> %{label}<br><b>Count:</b> %{value}'
@@ -88,6 +88,7 @@ def update_graph(selected_shape):
             hovertemplate=hover_template)
 
         graph.update_layout(
+            legend_title='Shapes',
             xaxis=dict(tickangle=90),
             xaxis_title='Shapes',
             yaxis_title='Total number of Sightings',
