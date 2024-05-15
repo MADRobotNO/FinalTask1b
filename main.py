@@ -27,16 +27,18 @@ selected_value = ALL
 
 dash_app.layout = html.Div([
     html.H1("Exploring UFO Sightings: Shapes Over Time", style={'text-align': 'center', 'margin-bottom': '20px'}),
+
     html.Div([
-        html.Label('Shapes'),
-        dcc.Dropdown(
-            id='shapes_dropdown',
-            options=options,
-            value=selected_value,
-            multi=False,
-            clearable=False,
-            style={'width': '50%', 'margin': '20px'}
-        ),
+        html.Div([
+            html.Label('Shapes:'),
+            dcc.Dropdown(
+                id='shapes_dropdown',
+                options=options,
+                value=selected_value,
+                multi=False,
+                clearable=False,
+                ),
+        ], style={'display': 'inline-block', 'width': '50%', 'margin': '20px'}),
         dcc.Graph(id='shapes_graph'),
     ], style={'margin-bottom': '20px', 'border': '1px solid grey'}),
     html.Footer(
