@@ -5,7 +5,7 @@ import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
 
-ALL = 'All'
+ALL = 'All shapes'
 
 df = pd.read_csv("Cleaned.csv", delimiter=';')
 
@@ -28,6 +28,7 @@ selected_value = ALL
 dash_app.layout = html.Div([
     html.H1("Exploring UFO Sightings: Shapes Over Time", style={'text-align': 'center', 'margin-bottom': '20px'}),
     html.Div([
+        html.Label('Shapes'),
         dcc.Dropdown(
             id='shapes_dropdown',
             options=options,
